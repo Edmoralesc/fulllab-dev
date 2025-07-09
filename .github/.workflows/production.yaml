@@ -1,0 +1,21 @@
+name: full-lab
+
+on : 
+  push:
+    branches: ["stage"]
+
+env:
+  SOURCE-REGISTRY: cachac
+  IMAGE_NAME: kubelabs_publicapi
+  OPS_REPO: Edmoralesc/ops
+  OPS_BRANCH: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3 # checkout github code
+        name: Checkout code
+        with:
+          fetch-depth: 0 # fetch tags
+
