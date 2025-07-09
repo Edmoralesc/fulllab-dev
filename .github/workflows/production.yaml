@@ -5,8 +5,8 @@ on :
     branches: ["stage"]
 
 env:
-  SOURCE-REGISTRY: cachac
-  DESTINATION-REGISTRTY: emoralesc
+  SOURCE_REGISTRY: cachac
+  DESTINATION_REGISTRTY: emoralesc
   IMAGE_NAME: kubelabs_publicapi
   OPS_REPO: Edmoralesc/ops
   OPS_BRANCH: main
@@ -31,6 +31,6 @@ jobs:
         with:
           push: true
           # file: ./path-to-dockerfile
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.DESTINATION_REGISTRTY }}/${{ env.IMAGE_NAME }}:latest
           build-args: |
             APP_ENV=${{ secrets.STAGE_APP_ENV }}
